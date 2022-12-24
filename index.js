@@ -5,11 +5,11 @@ const nodemailer = require("nodemailer")
 const app = express();
 
 var transport = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
     auth: {
-        user: "6b155d348ff893",
-        pass: "f8308eef5a6b12"
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
     }
 });
 
